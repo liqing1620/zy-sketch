@@ -51,7 +51,9 @@ module.exports = function (ctx) {
     // framework: 'all' --- includes everything; for dev only!
     framework: {
       components: [
+        'QAjaxBar',
         'QBtnGroup',
+        'QChip',
         'QCard',
         'QCardTitle',
         'QCardMain',
@@ -69,6 +71,7 @@ module.exports = function (ctx) {
         'QTab',
         'QTabPane',
         'QRouteTab',
+        'QSearch',
         'QToolbar',
         'QToolbarTitle',
         'QBtn',
@@ -86,7 +89,8 @@ module.exports = function (ctx) {
       // Quasar plugins
       plugins: [
         'Notify',
-        'Dialog'
+        'Dialog',
+        'AppFullscreen'
       ],
       iconSet: ctx.theme.mat ? 'material-icons' : 'ionicons',
       i18n: 'zh-hans' // Quasar language

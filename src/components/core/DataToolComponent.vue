@@ -1,7 +1,5 @@
 <template>
-  <q-toolbar
-    inverted
-    color="black">
+  <q-toolbar class="q-opcity">
     <q-btn
       color="primary"
       size="sm"
@@ -13,7 +11,6 @@
            :key="item"
            class="q-ml-md"
            outline
-           color="primary"
            :label="item"
            @click="$emit('getToolType',item)"/>
     <q-btn v-show="!editType"
@@ -22,12 +19,11 @@
            class="q-ml-md"
            outline
            icon="delete"
-           color="red"
+           color="red-5"
            :label="item"
            @click="toolData.splice(index,1)"/>
     <q-btn v-show="!editType"
            class="q-ml-md"
-           color="secondary"
            size="sm"
            outline
            round dense

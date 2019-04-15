@@ -1,1 +1,98 @@
 // app global css
+@import "./themes/common.variables.styl"
+
+body
+  color #525f7f
+  background-color #f8f9fe
+
+.text-brand
+  color $primary !important
+
+.bg-brand
+  background $primary !important
+
+.bg-gradient-default
+  background linear-gradient(87deg, $default 0, #1a174d 100%) !important
+
+.bg-gradient-primary
+  background linear-gradient(87deg, $primary 0, #7f47e4 100%) !important
+
+.q-pb-8r
+  padding-bottom 8rem !important
+
+.q-pb-10r
+  padding-bottom 10rem !important
+
+.q-pb-12r
+  padding-bottom 12rem !important
+
+.q-mt--10r
+  margin-top -10rem !important
+
+.q-rounded
+  border-radius 2rem !important
+
+.text-sm
+  font-size .875rem !important
+
+.page-layout-fluid
+  padding .25rem 1.5rem .25rem 1.5rem
+  position relative
+  margin 0 auto
+
+.q-card-dense
+  .q-card-main
+    padding 16px !important
+
+  .q-card-container
+    padding 0px 16px !important
+
+    .q-card-title
+      line-height 42px
+      font-size 1rem
+
+.q-table
+  th
+    font-size 14px !important
+
+.q-opcity
+  background-color rgba(255, 255, 255, 0)!important
+
+.exception-content
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .title
+    color: rgb(51, 51, 51);
+
+  .description
+    color: rgb(102, 102, 102);
+
+@media screen and (max-width: 1199px) and (min-width: 721px)
+  .exception-content
+    .imgException
+      max-width: 180px;
+      margin-right: 30px;
+
+    .title
+      font-size: 20px;
+      margin: 10px 0;
+
+    .description
+      font-size: 14px;
+
+@media screen and (min-width: 1200px)
+  .exception-content
+    min-height: $container-height;
+
+    .imgException
+      max-width: 260px;
+      margin-right: 50px;
+
+    .title
+      font-size: 24px;
+      margin: 20px 0;
+
+    .description
+      font-size: 16px;

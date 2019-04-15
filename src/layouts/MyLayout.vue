@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-layout-header>
+    <q-layout-header class="bg-transparent no-shadow q-pb-12r bg-gradient-primary">
       <!--      <q-toolbar-->
       <!--        color="primary"-->
       <!--        :glossy="$q.theme === 'mat'"-->
@@ -21,13 +21,20 @@
       <!--          <div slot="subtitle"></div>-->
       <!--        </q-toolbar-title>-->
       <!--      </q-toolbar>-->
-      <q-toolbar
-        color="primary"
-        :glossy="$q.theme === 'mat'"
-        :inverted="$q.theme === 'ios'"
-      >
-        众越科技数据管理
+      <q-toolbar class="justify-between bg-gradient-primary">
+        <q-chip square avatar="/statics/Halloween1.png" color="primary">
+          众越科技数据管理
+        </q-chip>
+
+        <!--全屏按钮-->
+        <q-btn flat  dense
+               :icon="this.$q.fullscreen.isActive?'fullscreen_exit':'fullscreen'"
+               class="q-mr-xs"
+               v-if="this.$q.fullscreen.isCapable"
+               @click="toggleFullScreen">
+        </q-btn>
       </q-toolbar>
+
     </q-layout-header>
 
 <!--    <q-layout-drawer-->
@@ -36,7 +43,7 @@
 <!--    >-->
 <!--    </q-layout-drawer>-->
 
-    <q-page-container>
+    <q-page-container class="q-mt--10r">
       <router-view/>
     </q-page-container>
   </q-layout>
@@ -49,14 +56,23 @@
     name: 'MyLayout',
     data () {
       return {
+        search: '',
         leftDrawerOpen: this.$q.platform.is.desktop
       }
     },
     methods: {
-      openURL
+      openURL,
+      //全屏显示
+      toggleFullScreen () {
+        this.$q.fullscreen.toggle()
+      }
     }
   }
 </script>
 
-<style>
+<style scoped>
+  .q-layout-page-container main {
+    z-index: 2500;
+  }
+
 </style>
