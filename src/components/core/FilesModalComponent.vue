@@ -15,14 +15,15 @@
     props: {
       open: {
         type: Boolean,
-        defaults: true
+        default: false
       }
     },
     data () {
       return {}
     },
-    props: {},
-    computed: {},
+    computed: {
+
+    },
     components: {},
     methods: {},
     watch: {},

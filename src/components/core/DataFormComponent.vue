@@ -24,13 +24,13 @@
           <q-btn
             class="q-ma-md"
             color="primary"
-            @click="!open">上传
+            @click="openModal">上传
           </q-btn>
         </div>
       </div>
     </div>
     <!--    弹框部分-->
-    <files-modal :open="open"></files-modal>
+    <files-modal></files-modal>
     <!--    数据部分-->
     <div class="data-container text-center">
       <template v-for="item in 16">
@@ -89,8 +89,6 @@
           '室内',
           '室外',
           '其它'],
-        //弹框
-        open:false,
         //分页
         page: 1,
         minPages: 1,
@@ -131,7 +129,7 @@
       getToolType (e) {
         console.log('当前选择的类型为:', e)
       },
-      uploadFiles(){
+      openModal(){
       }
     },
     watch: {}
