@@ -3,8 +3,8 @@
     <q-layout-header class="bg-transparent no-shadow q-pb-12r bg-gradient-primary">
       <!--      <q-toolbar-->
       <!--        color="primary"-->
-      <!--        :glossy="$q.theme === 'mat'"-->
-      <!--        :inverted="$q.theme === 'ios'"-->
+<!--              :glossy="$q.theme === 'mat'"-->
+<!--              :inverted="$q.theme === 'ios'"-->
       <!--      >-->
       <!--        <q-btn-->
       <!--          flat-->
@@ -21,8 +21,11 @@
       <!--          <div slot="subtitle"></div>-->
       <!--        </q-toolbar-title>-->
       <!--      </q-toolbar>-->
-      <q-toolbar class="justify-between bg-gradient-primary">
-        <q-chip square avatar="/statics/Halloween1.png" color="primary">
+      <q-toolbar
+        :glossy="$q.theme === 'mat'"
+        :inverted="$q.theme === 'ios'"
+        class="justify-between bg-gradient-primary">
+        <q-chip class="q-opcity" square avatar="/statics/Halloween1.png">
           众越科技数据管理
         </q-chip>
 

@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-ma-lg">
+  <q-page class="q-ma-lg" style="width: 100%">
     <div class="data-header q-mx-lg q-pt-md q-mb-md">
       <!--工具-->
       <data-tool
@@ -30,21 +30,23 @@
       </div>
     </div>
     <!--    弹框部分-->
-    <files-modal></files-modal>
+    <files-modal ref="files"></files-modal>
     <!--    数据部分-->
-    <div class="data-container text-center">
-      <template v-for="item in 16">
+    <div class="data-container q-mx-lg justify-between">
+      <template v-for="item in items">
         <q-card inline class="q-ma-sm">
           <q-card-media>
-            <img src="../../statics/Halloween1.png">
+            <img :src="item.src">
             <div slot="loading">Loading...</div>
             <q-card-title
               slot="overlay"
               class="q-pa-sm">
+              {{items.name}}
               <q-btn slot="right"
                      fab dense
                      text-color="white"
-                     icon="search"></q-btn>
+                     icon="search"
+                     @click="goView(item)"></q-btn>
             </q-card-title>
           </q-card-media>
           <q-card-separator/>
@@ -79,6 +81,25 @@
     name: 'DataFormComponent',
     data () {
       return {
+        //数据
+        items: [
+          { name: '监控数据_1', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_2', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_3', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_4', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_5', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_6', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_7', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_8', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_9', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_10', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_11', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_12', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_13', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_14', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_15', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_16', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' }],
+        modelData:'',
         //搜索
         search: '',
         //工具部分数据
@@ -129,8 +150,14 @@
       getToolType (e) {
         console.log('当前选择的类型为:', e)
       },
-      openModal(){
-      }
+      openModal () {
+        this.$refs.files.opened = true;
+          this.$refs.files.model= { name: '', mName: '', src: '', path: '', price: '', type: '', info: '' }
+      },
+      goView (data) {
+        this.$refs.files.opened = true;
+        this.$refs.files.model = data
+      },
     },
     watch: {}
   }
@@ -141,8 +168,8 @@
 
   .data-header {
     background: rgba(0, 0, 0, 0.4);
-    -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.2), 0 2px 2px rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12);
-    box-shadow: 0 1px 5px rgba(0,0,0,0.2), 0 2px 2px rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
   }
 
 </style>

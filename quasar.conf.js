@@ -60,6 +60,8 @@ module.exports = function (ctx) {
         'QCardMedia',
         'QCardSeparator',
         'QCardActions',
+        'QField',
+        'QInput',
         'QLayout',
         'QLayoutHeader',
         'QLayoutDrawer',
