@@ -3,7 +3,7 @@
     <q-layout-header class="bg-transparent no-shadow q-pb-12r bg-gradient-primary">
       <q-toolbar class="justify-between bg-transparent">
         <q-chip class="q-opcity" square avatar="./statics/Halloween1.png">
-          xxx数据管理
+          众越科技数据管理
         </q-chip>
 
         <!--全屏按钮-->
@@ -23,9 +23,12 @@
 <!--    >-->
 <!--    </q-layout-drawer>-->
 
-    <q-page-container>
+    <q-page-container class="q-mt--10r">
       <router-view/>
     </q-page-container>
+    <q-layout-footer>
+
+    </q-layout-footer>
   </q-layout>
 </template>
 

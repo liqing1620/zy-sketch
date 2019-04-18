@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-ma-lg q-mt--13r" style="width: 100%">
+  <q-page class="q-ma-lg" style="width: 100%">
     <div class="data-header q-mx-lg q-pt-md q-mb-md">
       <!--工具-->
       <data-tool
