@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-ma-lg" style="width: 100%">
+  <q-page class="q-ma-lg q-mt--13r" style="width: 100%">
     <div class="data-header q-mx-lg q-pt-md q-mb-md">
       <!--工具-->
       <data-tool
@@ -83,22 +83,22 @@
       return {
         //数据
         items: [
-          { name: '监控数据_1', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_2', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_3', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_4', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_5', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_6', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_7', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_8', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_9', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_10', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_11', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_12', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_13', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_14', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_15', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_16', mName: '监控模型', src: '/statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' }],
+          { name: '监控数据_1', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_2', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_3', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_4', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_5', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_6', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_7', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_8', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_9', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_10', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_11', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_12', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_13', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_14', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_15', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
+          { name: '监控数据_16', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' }],
         modelData:'',
         //搜索
         search: '',

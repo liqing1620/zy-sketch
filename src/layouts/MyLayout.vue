@@ -1,32 +1,9 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="lhr LpR LFf">
     <q-layout-header class="bg-transparent no-shadow q-pb-12r bg-gradient-primary">
-      <!--      <q-toolbar-->
-      <!--        color="primary"-->
-<!--              :glossy="$q.theme === 'mat'"-->
-<!--              :inverted="$q.theme === 'ios'"-->
-      <!--      >-->
-      <!--        <q-btn-->
-      <!--          flat-->
-      <!--          dense-->
-      <!--          round-->
-      <!--          @click="leftDrawerOpen = !leftDrawerOpen"-->
-      <!--          aria-label="Menu"-->
-      <!--        >-->
-      <!--          <q-icon name="menu" />-->
-      <!--        </q-btn>-->
-
-      <!--        <q-toolbar-title>-->
-      <!--          众越科技数据管理-->
-      <!--          <div slot="subtitle"></div>-->
-      <!--        </q-toolbar-title>-->
-      <!--      </q-toolbar>-->
-      <q-toolbar
-        :glossy="$q.theme === 'mat'"
-        :inverted="$q.theme === 'ios'"
-        class="justify-between bg-gradient-primary">
-        <q-chip class="q-opcity" square avatar="/statics/Halloween1.png">
-          众越科技数据管理
+      <q-toolbar class="justify-between bg-transparent">
+        <q-chip class="q-opcity" square avatar="./statics/Halloween1.png">
+          xxx数据管理
         </q-chip>
 
         <!--全屏按钮-->
@@ -46,7 +23,7 @@
 <!--    >-->
 <!--    </q-layout-drawer>-->
 
-    <q-page-container class="q-mt--10r">
+    <q-page-container>
       <router-view/>
     </q-page-container>
   </q-layout>
