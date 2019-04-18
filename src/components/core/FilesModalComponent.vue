@@ -6,11 +6,19 @@
       <q-btn fab dense icon="close" @click="opened=false"></q-btn>
     </q-toolbar>
     <div class="row justify-between">
-      <div class="col-6 relative-position">
+      <div class="col-6 relative-position content-middle">
         <img :src="model.src" width="100%">
-        <q-btn class="absolute-bottom-right" icon="filter"></q-btn>
+        <q-field
+        class="absolute-bottom q-ma-lg"
+        icon="filter">
+        <q-uploader
+          :url="imgUrl"
+          color="secondary"
+          @start="addImg()"
+          stack-label="缩略图上传"/>
+        </q-field>
       </div>
-      <div class="col-6 q-px-xl q-py-md">
+      <div class="col-6 q-px-md q-py-md">
         <q-field
           label="模型名称："
           label-width="3"
@@ -18,13 +26,11 @@
           icon="bookmarks">
           <q-input v-model="model.mName"/>
         </q-field>
-        <div class="q-ma-md row justify-between">
-          <q-input
-            inverted-light
-            color="white"
-            v-model="model.path"/>
-          <q-btn>上传</q-btn>
-        </div>
+        <q-field
+          icon="unarchive"
+          class="q-ma-md">
+          <q-uploader :url="filesUrl" multiple color="primary" @finish="addFiles()" float-label="模型文件上传" />
+        </q-field>
         <q-input
           class="q-ma-md"
           inverted-light
@@ -57,19 +63,31 @@
     data () {
       return {
         opened: false,
-        model:{
+        model: {
           name: '',
           mName: '',
           path: '',
           price: '',
           type: '',
           info: ''
-        }
+        },
+        imgUrl:'',
+        filesUrl:'',
+        error: false,
+        warning: false,
       }
+
     },
     computed: {},
     components: {},
-    methods: {},
+    methods: {
+      addImg(e){
+        console.log("缩略图上传："+e)
+      },
+      addFiles(e){
+        console.log("模型文件上传："+e)
+      }
+    },
     watch: {},
   }
 

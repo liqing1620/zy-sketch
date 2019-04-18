@@ -4,7 +4,7 @@
 ├── src/
 │   ├── assets/              # 动态资源（由webpack处理）
 │   ├── statics/             # 纯静态资源（直接复制）
-│   ├── components/          # 用于页面和布局的.vue组件
+│   ├── components/core      # 全局注册.vue组件
 │   ├── css/                 # CSS/Stylus/Sass/...文件
 |   |   ├── app.styl
 |   │   └── themes/          # Quasar主题入口点供您调整
@@ -13,7 +13,7 @@
 |   │       └── variables.ios.styl    # iOS主题的变量
 │   ├── layouts/             # 布局 .vue 文件
 │   ├── pages/               # 页面 .vue 文件
-│   ├── plugins/             # app插件 (app初始化代码)
+│   ├── plugins/inject.js    # app插件 (app初始化代码)注入core全局组建
 │   ├── router/              # Vue路由器
 |   |   ├── index.js         # Vue路由器定义
 |   │   └── routes.js        # App路由器定义

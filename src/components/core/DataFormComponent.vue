@@ -55,8 +55,8 @@
           <q-icon class="text-red" name="bookmark_border"></q-icon>模型名称
         </span>
             <div style="font-size:25px">
-              <q-icon color="primary" name="edit"/>
-              <q-icon color="red" name="delete"/>
+              <q-btn flat color="primary" class="q-mr-sm" icon="edit" @click="goEdit(item)"/>
+              <q-btn flat color="negative" icon="delete" @click="goDelete(item)"/>
             </div>
           </q-card-actions>
         </q-card>
@@ -120,6 +120,7 @@
     computed: {},
     components: {},
     methods: {
+      //场景类型添加
       addHosueType (type) {
         let info = '请输入要添加的类型：比如（场景库）'
         type === 'house' ? info : info = '请输入要添加的类型：比如（室内)'
@@ -141,23 +142,46 @@
               this.sData.push(data)
               break
           }
-          this.$q.notify(`You typed: "${data}"`)
         }).catch(() => {
           console.log('用户没有执行任何操作。')
         })
-        console.log('触发了增加事件类型：', type)
       },
+      //场景类型选择
       getToolType (e) {
         console.log('当前选择的类型为:', e)
       },
+      //上传窗口打开
       openModal () {
         this.$refs.files.opened = true;
           this.$refs.files.model= { name: '', mName: '', src: '', path: '', price: '', type: '', info: '' }
       },
+      //预览
       goView (data) {
         this.$refs.files.opened = true;
         this.$refs.files.model = data
       },
+      //编辑
+      goEdit(data){
+        this.$refs.files.opened = true;
+        this.$refs.files.model = data
+      },
+      //删除
+      goDelete(data){
+        this.$q.dialog({
+          title: '重要提示',
+          message: '是否删除'+data.name+','+'一旦删除，该数据将无法恢复。',
+          ok: '确定',
+          cancel: '取消'
+        }).then(() => {
+          this.$q.notify({
+           message:'模型删除成功',
+           position: 'top',
+           timeout: 100
+          })
+        }).catch(() => {
+          console.log("用户取消了该操作")
+        })
+      }
     },
     watch: {}
   }
