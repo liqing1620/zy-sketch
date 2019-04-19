@@ -37,7 +37,7 @@
         <div  @mouseover="overlayId=index" @mouseout="overlayId=''">
         <q-card inline class="q-ma-sm">
           <q-card-media class="card-bg">
-            <img :src="item.src" height="100%">
+            <img :src="item.src" width="100%">
             <div slot="loading">Loading...</div>
               <q-card-title
                 v-show="overlayId===index"
@@ -89,7 +89,7 @@
           {
             name: '监控数据_1',
             mName: '监控模型',
-            src: './statics/z.png',
+            src: './statics/Halloween1.png',
             path: 'G:\\zy-sketch\\src\\statics',
             price: '',
             type: '',
@@ -98,7 +98,7 @@
           {
             name: '监控数据_2',
             mName: '监控模型',
-            src: './statics/z.png',
+            src: './statics/Halloween1.png',
             path: 'G:\\zy-sketch\\src\\statics',
             price: '',
             type: '',
@@ -107,7 +107,7 @@
           {
             name: '监控数据_2',
             mName: '监控模型',
-            src: './statics/z.png',
+            src: './statics/Halloween1.png',
             path: 'G:\\zy-sketch\\src\\statics',
             price: '',
             type: '',
@@ -116,7 +116,7 @@
           {
             name: '监控数据_2',
             mName: '监控模型',
-            src: './statics/z.png',
+            src: './statics/Halloween1.png',
             path: 'G:\\zy-sketch\\src\\statics',
             price: '',
             type: '',
@@ -125,7 +125,7 @@
           {
             name: '监控数据_2',
             mName: '监控模型',
-            src: './statics/z.png',
+            src: './statics/Halloween1.png',
             path: 'G:\\zy-sketch\\src\\statics',
             price: '',
             type: '',
@@ -134,7 +134,7 @@
           {
             name: '监控数据_2',
             mName: '监控模型',
-            src: './statics/z.png',
+            src: './statics/Halloween1.png',
             path: 'G:\\zy-sketch\\src\\statics',
             price: '',
             type: '',
@@ -143,7 +143,7 @@
           {
             name: '监控数据_2',
             mName: '监控模型',
-            src: './statics/z.png',
+            src: './statics/Halloween1.png',
             path: 'G:\\zy-sketch\\src\\statics',
             price: '',
             type: '',
@@ -152,7 +152,7 @@
           {
             name: '监控数据_3',
             mName: '监控模型',
-            src: './statics/z.png',
+            src: './statics/Halloween1.png',
             path: 'G:\\zy-sketch\\src\\statics',
             price: '',
             type: '',
@@ -161,7 +161,7 @@
           {
             name: '监控数据_4',
             mName: '监控模型',
-            src: './statics/z.png',
+            src: './statics/Halloween1.png',
             path: 'G:\\zy-sketch\\src\\statics',
             price: '',
             type: '',
@@ -170,7 +170,7 @@
           {
             name: '监控数据_5',
             mName: '监控模型',
-            src: './statics/z.png',
+            src: './statics/Halloween1.png',
             path: 'G:\\zy-sketch\\src\\statics',
             price: '',
             type: '',
@@ -179,7 +179,7 @@
           {
             name: '监控数据_6',
             mName: '监控模型',
-            src: './statics/z.png',
+            src: './statics/Halloween1.png',
             path: 'G:\\zy-sketch\\src\\statics',
             price: '',
             type: '',
@@ -188,7 +188,7 @@
           {
             name: '监控数据_7',
             mName: '监控模型',
-            src: './statics/z.png',
+            src: './statics/Halloween1.png',
             path: 'G:\\zy-sketch\\src\\statics',
             price: '',
             type: '',
@@ -197,7 +197,7 @@
           {
             name: '监控数据_7',
             mName: '监控模型',
-            src: './statics/z.png',
+            src: './statics/Halloween1.png',
             path: 'G:\\zy-sketch\\src\\statics',
             price: '',
             type: '',
@@ -206,7 +206,7 @@
           {
             name: '监控数据_7',
             mName: '监控模型',
-            src: './statics/z.png',
+            src: './statics/Halloween1.png',
             path: 'G:\\zy-sketch\\src\\statics',
             price: '',
             type: '',
@@ -215,7 +215,7 @@
           {
             name: '监控数据_16',
             mName: '监控模型',
-            src: './statics/z.png',
+            src: './statics/Halloween1.png',
             path: 'G:\\zy-sketch\\src\\statics',
             price: '',
             type: '',
@@ -327,7 +327,5 @@
   .card-bg {
     background: rgba(128, 128, 128, 0.2);
     cursor: pointer;
-    width: 348px;
-    height: 200px;
   }
 </style>
