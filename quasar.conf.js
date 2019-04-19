@@ -4,6 +4,7 @@ module.exports = function (ctx) {
   return {
     // app plugins (/src/plugins)
     plugins: [
+      'axios',
       'inject'
     ],
     css: [
@@ -64,6 +65,7 @@ module.exports = function (ctx) {
         'QInput',
         'QLayout',
         'QLayoutHeader',
+        'QLayoutFooter',
         'QLayoutDrawer',
         'QModal',
         'QPageContainer',

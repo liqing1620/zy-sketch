@@ -11,6 +11,7 @@
            :key="item"
            class="q-ml-md"
            outline
+           color="grey-8"
            :label="item"
            @click="$emit('getToolType',item)"/>
     <q-btn v-show="!editType"

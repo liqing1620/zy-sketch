@@ -30,40 +30,43 @@
       </div>
     </div>
     <!--    弹框部分-->
-    <files-modal ref="files"></files-modal>
+    <files-modal ref="files" :modelStatus="modelStatus"></files-modal>
     <!--    数据部分-->
-    <div class="data-container q-mx-lg justify-between">
-      <template v-for="item in items">
+    <div class="q-mx-lg row">
+      <template v-for="(item,index) in items">
+        <div  @mouseover="overlayId=index" @mouseout="overlayId=''">
         <q-card inline class="q-ma-sm">
-          <q-card-media>
-            <img :src="item.src">
+          <q-card-media class="card-bg">
+            <img :src="item.src" height="100%">
             <div slot="loading">Loading...</div>
-            <q-card-title
-              slot="overlay"
-              class="q-pa-sm">
-              {{items.name}}
-              <q-btn slot="right"
-                     fab dense
-                     text-color="white"
-                     icon="search"
-                     @click="goView(item)"></q-btn>
-            </q-card-title>
+              <q-card-title
+                v-show="overlayId===index"
+                slot="overlay"
+                class="q-pa-sm">
+                {{items.name}}
+                <q-btn slot="right"
+                       fab dense
+                       text-color="white"
+                       icon="search"
+                       @click="goView(item)"></q-btn>
+              </q-card-title>
           </q-card-media>
           <q-card-separator/>
           <q-card-actions class="row items-center justify-between">
-        <span>
-          <q-icon class="text-red" name="bookmark_border"></q-icon>模型名称
-        </span>
+            <span>
+              <q-icon class="text-red" name="bookmark_border"></q-icon>模型名称
+            </span>
             <div style="font-size:25px">
               <q-btn flat color="primary" class="q-mr-sm" icon="edit" @click="goEdit(item)"/>
               <q-btn flat color="negative" icon="delete" @click="goDelete(item)"/>
             </div>
           </q-card-actions>
         </q-card>
+        </div>
       </template>
     </div>
     <!--分页-->
-    <div class="data-footer q-pr-xl q-ma-md">
+    <div class="q-pr-xl q-ma-md">
       <q-pagination
         class="float-right"
         v-model="page"
@@ -83,23 +86,144 @@
       return {
         //数据
         items: [
-          { name: '监控数据_1', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_2', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_3', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_4', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_5', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_6', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_7', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_8', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_9', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_10', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_11', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_12', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_13', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_14', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_15', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' },
-          { name: '监控数据_16', mName: '监控模型', src: './statics/Halloween1.png', path: 'G:\\zy-sketch\\src\\statics', price: '', type: '', info: '' }],
-        modelData:'',
+          {
+            name: '监控数据_1',
+            mName: '监控模型',
+            src: './statics/z.png',
+            path: 'G:\\zy-sketch\\src\\statics',
+            price: '',
+            type: '',
+            info: ''
+          },
+          {
+            name: '监控数据_2',
+            mName: '监控模型',
+            src: './statics/z.png',
+            path: 'G:\\zy-sketch\\src\\statics',
+            price: '',
+            type: '',
+            info: ''
+          },
+          {
+            name: '监控数据_2',
+            mName: '监控模型',
+            src: './statics/z.png',
+            path: 'G:\\zy-sketch\\src\\statics',
+            price: '',
+            type: '',
+            info: ''
+          },
+          {
+            name: '监控数据_2',
+            mName: '监控模型',
+            src: './statics/z.png',
+            path: 'G:\\zy-sketch\\src\\statics',
+            price: '',
+            type: '',
+            info: ''
+          },
+          {
+            name: '监控数据_2',
+            mName: '监控模型',
+            src: './statics/z.png',
+            path: 'G:\\zy-sketch\\src\\statics',
+            price: '',
+            type: '',
+            info: ''
+          },
+          {
+            name: '监控数据_2',
+            mName: '监控模型',
+            src: './statics/z.png',
+            path: 'G:\\zy-sketch\\src\\statics',
+            price: '',
+            type: '',
+            info: ''
+          },
+          {
+            name: '监控数据_2',
+            mName: '监控模型',
+            src: './statics/z.png',
+            path: 'G:\\zy-sketch\\src\\statics',
+            price: '',
+            type: '',
+            info: ''
+          },
+          {
+            name: '监控数据_3',
+            mName: '监控模型',
+            src: './statics/z.png',
+            path: 'G:\\zy-sketch\\src\\statics',
+            price: '',
+            type: '',
+            info: ''
+          },
+          {
+            name: '监控数据_4',
+            mName: '监控模型',
+            src: './statics/z.png',
+            path: 'G:\\zy-sketch\\src\\statics',
+            price: '',
+            type: '',
+            info: ''
+          },
+          {
+            name: '监控数据_5',
+            mName: '监控模型',
+            src: './statics/z.png',
+            path: 'G:\\zy-sketch\\src\\statics',
+            price: '',
+            type: '',
+            info: ''
+          },
+          {
+            name: '监控数据_6',
+            mName: '监控模型',
+            src: './statics/z.png',
+            path: 'G:\\zy-sketch\\src\\statics',
+            price: '',
+            type: '',
+            info: ''
+          },
+          {
+            name: '监控数据_7',
+            mName: '监控模型',
+            src: './statics/z.png',
+            path: 'G:\\zy-sketch\\src\\statics',
+            price: '',
+            type: '',
+            info: ''
+          },
+          {
+            name: '监控数据_7',
+            mName: '监控模型',
+            src: './statics/z.png',
+            path: 'G:\\zy-sketch\\src\\statics',
+            price: '',
+            type: '',
+            info: ''
+          },
+          {
+            name: '监控数据_7',
+            mName: '监控模型',
+            src: './statics/z.png',
+            path: 'G:\\zy-sketch\\src\\statics',
+            price: '',
+            type: '',
+            info: ''
+          },
+          {
+            name: '监控数据_16',
+            mName: '监控模型',
+            src: './statics/z.png',
+            path: 'G:\\zy-sketch\\src\\statics',
+            price: '',
+            type: '',
+            info: ''
+          }],
+        overlayId: '',
+        modelData: '',
+        modelStatus: 'edit',
         //搜索
         search: '',
         //工具部分数据
@@ -152,34 +276,37 @@
       },
       //上传窗口打开
       openModal () {
-        this.$refs.files.opened = true;
-          this.$refs.files.model= { name: '', mName: '', src: '', path: '', price: '', type: '', info: '' }
+        this.$refs.files.opened = true
+        this.$refs.files.model = { name: '', mName: '', src: '', path: '', price: '', type: '', info: '' }
+        this.modelStatus = 'edit'
       },
       //预览
       goView (data) {
-        this.$refs.files.opened = true;
+        this.$refs.files.opened = true
         this.$refs.files.model = data
+        this.modelStatus = 'view'
       },
       //编辑
-      goEdit(data){
-        this.$refs.files.opened = true;
+      goEdit (data) {
+        this.$refs.files.opened = true
         this.$refs.files.model = data
+        this.modelStatus = 'edit'
       },
       //删除
-      goDelete(data){
+      goDelete (data) {
         this.$q.dialog({
           title: '重要提示',
-          message: '是否删除'+data.name+','+'一旦删除，该数据将无法恢复。',
+          message: '是否删除' + data.name + ',' + '一旦删除，该数据将无法恢复。',
           ok: '确定',
           cancel: '取消'
         }).then(() => {
           this.$q.notify({
-           message:'模型删除成功',
-           position: 'top',
-           timeout: 100
+            message: '模型删除成功',
+            position: 'top',
+            timeout: 100
           })
         }).catch(() => {
-          console.log("用户取消了该操作")
+          console.log('用户取消了该操作')
         })
       }
     },
@@ -191,9 +318,16 @@
 <style scoped>
 
   .data-header {
-    background: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 1);
     -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
   }
 
+  .card-bg {
+    background: rgba(128, 128, 128, 0.2);
+    cursor: pointer;
+    width: 348px;
+    height: 200px;
+  }
 </style>
