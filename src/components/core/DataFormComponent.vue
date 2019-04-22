@@ -85,142 +85,7 @@
     data () {
       return {
         //数据
-        items: [
-          {
-            name: '监控数据_1',
-            mName: '监控模型',
-            src: './statics/Halloween1.png',
-            path: 'G:\\zy-sketch\\src\\statics',
-            price: '',
-            type: '',
-            info: ''
-          },
-          {
-            name: '监控数据_2',
-            mName: '监控模型',
-            src: './statics/Halloween1.png',
-            path: 'G:\\zy-sketch\\src\\statics',
-            price: '',
-            type: '',
-            info: ''
-          },
-          {
-            name: '监控数据_2',
-            mName: '监控模型',
-            src: './statics/Halloween1.png',
-            path: 'G:\\zy-sketch\\src\\statics',
-            price: '',
-            type: '',
-            info: ''
-          },
-          {
-            name: '监控数据_2',
-            mName: '监控模型',
-            src: './statics/Halloween1.png',
-            path: 'G:\\zy-sketch\\src\\statics',
-            price: '',
-            type: '',
-            info: ''
-          },
-          {
-            name: '监控数据_2',
-            mName: '监控模型',
-            src: './statics/Halloween1.png',
-            path: 'G:\\zy-sketch\\src\\statics',
-            price: '',
-            type: '',
-            info: ''
-          },
-          {
-            name: '监控数据_2',
-            mName: '监控模型',
-            src: './statics/Halloween1.png',
-            path: 'G:\\zy-sketch\\src\\statics',
-            price: '',
-            type: '',
-            info: ''
-          },
-          {
-            name: '监控数据_2',
-            mName: '监控模型',
-            src: './statics/Halloween1.png',
-            path: 'G:\\zy-sketch\\src\\statics',
-            price: '',
-            type: '',
-            info: ''
-          },
-          {
-            name: '监控数据_3',
-            mName: '监控模型',
-            src: './statics/Halloween1.png',
-            path: 'G:\\zy-sketch\\src\\statics',
-            price: '',
-            type: '',
-            info: ''
-          },
-          {
-            name: '监控数据_4',
-            mName: '监控模型',
-            src: './statics/Halloween1.png',
-            path: 'G:\\zy-sketch\\src\\statics',
-            price: '',
-            type: '',
-            info: ''
-          },
-          {
-            name: '监控数据_5',
-            mName: '监控模型',
-            src: './statics/Halloween1.png',
-            path: 'G:\\zy-sketch\\src\\statics',
-            price: '',
-            type: '',
-            info: ''
-          },
-          {
-            name: '监控数据_6',
-            mName: '监控模型',
-            src: './statics/Halloween1.png',
-            path: 'G:\\zy-sketch\\src\\statics',
-            price: '',
-            type: '',
-            info: ''
-          },
-          {
-            name: '监控数据_7',
-            mName: '监控模型',
-            src: './statics/Halloween1.png',
-            path: 'G:\\zy-sketch\\src\\statics',
-            price: '',
-            type: '',
-            info: ''
-          },
-          {
-            name: '监控数据_7',
-            mName: '监控模型',
-            src: './statics/Halloween1.png',
-            path: 'G:\\zy-sketch\\src\\statics',
-            price: '',
-            type: '',
-            info: ''
-          },
-          {
-            name: '监控数据_7',
-            mName: '监控模型',
-            src: './statics/Halloween1.png',
-            path: 'G:\\zy-sketch\\src\\statics',
-            price: '',
-            type: '',
-            info: ''
-          },
-          {
-            name: '监控数据_16',
-            mName: '监控模型',
-            src: './statics/Halloween1.png',
-            path: 'G:\\zy-sketch\\src\\statics',
-            price: '',
-            type: '',
-            info: ''
-          }],
+        items:[],
         overlayId: '',
         modelData: '',
         modelStatus: 'edit',
@@ -244,6 +109,17 @@
     computed: {},
     components: {},
     methods: {
+      //查询数据
+      getAxios(){
+        this.$axios({
+          methods: 'post',
+          url:'/findAll'
+        }).then(function (res) {
+          // cons
+        }).catch(function (err) {
+          console.log(err)
+        })
+      },
       //场景类型添加
       addHosueType (type) {
         let info = '请输入要添加的类型：比如（场景库）'
@@ -277,7 +153,7 @@
       //上传窗口打开
       openModal () {
         this.$refs.files.opened = true
-        this.$refs.files.model = { name: '', mName: '', src: '', path: '', price: '', type: '', info: '' }
+        this.$refs.files.model = {picId:'',fileId:'', picName: '',path:'', price: '', fileFormat: '', picExplain: ''}
         this.modelStatus = 'edit'
       },
       //预览

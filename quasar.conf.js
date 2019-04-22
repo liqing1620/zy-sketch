@@ -41,7 +41,7 @@ module.exports = function (ctx) {
       open: true, // opens browser window automatically
       proxy: {
         '/sketch': {
-          target: 'http://localhost:9009',
+          target: 'http://localhost:9090',
           changeOrigin: true,
           pathRewrite: {
             '^/sketch': ''
