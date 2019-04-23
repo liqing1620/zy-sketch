@@ -44,7 +44,7 @@
         <div @mouseover="overlayId=index" @mouseout="overlayId=''">
           <q-card inline class="q-ma-sm">
             <q-card-media class="card-bg">
-              <img :src="item.picId?imgUrl+item.picId+'?w=300&h=300':defaultUrl" >
+              <img :src="item.picId?imgUrl+item.picId+'?w=300&h=300':defaultUrl" :style="{'width':imgwidth+'px'}">
               <div slot="loading">Loading...</div>
               <q-card-title
                 v-show="overlayId===index"
@@ -129,7 +129,9 @@
         page: 1,
         size:12,
         minPages: 1,
-        maxPages: 12
+        maxPages: 12,
+        //图片尺寸
+        imgwidth:''
       }
     },
     created () {
@@ -258,6 +260,7 @@
       //数据展示区域尺寸监听
       onResize(size){
         console.log(size.width)
+        this.imgwidth=size.width/6.3
       }
     },
     watch: {}
@@ -278,12 +281,9 @@
     background: rgba(128, 128, 128, 0.2);
     cursor: pointer;
   }
-
-  .card-bg img {
-    width: 292px;
+  .card-bg img{
     height: 200px;
   }
-
   .data-info {
     width: 100%;
     text-align: center;
