@@ -14,6 +14,7 @@
           <q-card-actions
             v-show="modelStatus==='edit'">
             <q-uploader
+              ref="imgs"
               class="col"
               :url="filesUrl"
               color="secondary"
@@ -43,7 +44,7 @@
           helper="当前文件上传数量："
           label-width="4"
           class="q-ma-xl">
-          <q-uploader :url="filesUrl" color="primary" @uploaded="addFiles($event.xhr)"/>
+          <q-uploader  ref="files" :url="filesUrl" color="primary" @uploaded="addFiles($event.xhr)"/>
         </q-field>
         <!--        <form id="imgForm">-->
         <!--          <input type="file" :disabled="disabled" name="file" @change="getSignedUrl($event)"/>-->
@@ -180,6 +181,8 @@
           console.log(res)
           that.saveStatus = false
           that.opened = false
+          that.$refs.imgs.reset()
+          that.$files.imgs.reset()
           that.$emit('save-model')
         }).catch(function (err) {
           console.error(err)
