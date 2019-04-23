@@ -75,6 +75,7 @@ module.exports = function (ctx) {
         'QTab',
         'QTabPane',
         'QRouteTab',
+        'QResizeObservable',
         'QSearch',
         'QToolbar',
         'QToolbarTitle',
@@ -82,6 +83,8 @@ module.exports = function (ctx) {
         'QIcon',
         'QList',
         'QListHeader',
+        'QInnerLoading',
+        'QSpinnerGears',
         'QItem',
         'QItemMain',
         'QItemSide',
@@ -93,6 +96,7 @@ module.exports = function (ctx) {
       ],
       // Quasar plugins
       plugins: [
+        'Loading',
         'Notify',
         'Dialog',
         'AppFullscreen'

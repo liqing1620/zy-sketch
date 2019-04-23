@@ -6,22 +6,23 @@
     </q-toolbar>
     <div class="row justify-between">
       <div class="col-7 relative-position content-middle">
-        <q-card inline class="q-ma-sm" style="width: 100%">
+        <q-card inline class="q-ma-sm">
           <q-card-media class="card-bg">
-            <img :src="model.path?model.path:defaultUrl" width="100%">
+            <img :src="model.picId?Url+model.picId+'?w=400&h=400':defaultUrl">
           </q-card-media>
           <q-card-separator/>
           <q-card-actions
             v-show="modelStatus==='edit'">
             <q-uploader
-              :url="imgUrl"
+              class="col"
+              :url="filesUrl"
               color="secondary"
               @uploaded="addImg($event.xhr)"
               stack-label="缩略图上传"/>
           </q-card-actions>
         </q-card>
       </div>
-      <div class="col-5 q-px-md q-py-md">
+      <div class="col-5 q-px-md q-py-md" v-show="!payStatus">
         <q-field
           v-show="modelStatus==='edit'"
           label="模型名称："
@@ -38,11 +39,11 @@
         <q-field
           v-show="modelStatus==='edit'"
           label="模型上传："
-          :count="7"
+          :count="1"
           helper="当前文件上传数量："
           label-width="4"
           class="q-ma-xl">
-          <q-uploader :url="filesUrl" multiple color="primary" @uploaded="addFiles($event.xhr)"/>
+          <q-uploader :url="filesUrl" color="primary" @uploaded="addFiles($event.xhr)"/>
         </q-field>
         <!--        <form id="imgForm">-->
         <!--          <input type="file" :disabled="disabled" name="file" @change="getSignedUrl($event)"/>-->
@@ -96,15 +97,27 @@
             v-show="modelStatus==='edit'"
             class="q-ma-sm"
             icon="save" label="保存"
-            @click="saveModel(model)"></q-btn>
+            @click="saveModel()"></q-btn>
           <q-btn
             :loading="buyStatus"
             color="primary"
             v-show="modelStatus==='view'"
             class="q-ma-sm"
             icon="save" label="购买"
-            @click="buyModel(model)"></q-btn>
+            @click="buyModel()"></q-btn>
         </div>
+      </div>
+      <div class="col-5 text-center" v-show="payStatus">
+        <div class="q-mx-sm q-my-xl">
+          <img src="../../statics/alipay.png">
+          <img src="../../statics/wxpay.png">
+        </div>
+        <q-btn
+          :loading="buyStatus"
+          color="primary"
+          v-show="modelStatus==='view'"
+          class="q-ma-sm" label="完成"
+          @click="buyModel()"></q-btn>
       </div>
     </div>
 
@@ -143,41 +156,42 @@
         //保存及购买按钮状态
         saveStatus: false,
         buyStatus: false,
+        payStatus: false,
         //上传按钮状态
         disabled: false,
         //文件上传
+        Url:'http://127.0.0.1:10001/rest/storage/thumbnail/',
         defaultUrl: './statics/z.png',
-        imgUrl: '/sketch/model/upload',
-        filesUrl: '/sketch/model/upload',
+        filesUrl: '/sketch/model/rest/upload',
       }
 
     },
     computed: {},
     components: {},
     methods: {
-      saveModel (data) {
-        console.log(data)
+      saveModel () {
         let that = this
         this.saveStatus = true
         this.$axios({
           method: 'post',
-          url: '/save',
-          data: data
+          url: '/model/save',
+          data: that.model
         }).then(function (res) {
           console.log(res)
           that.saveStatus = false
+          that.opened = false
+          that.$emit('save-model')
         }).catch(function (err) {
           console.error(err)
         })
-      },
-      buyModel (data) {
 
+      },
+      buyModel () {
+         this.payStatus=!this.payStatus
       },
       addImg (e) {
         let res=JSON.parse(e.response)
         this.model.picId=res.id
-        console.log(JSON.parse(e.response))
-        this.model.path="http://127.0.0.1:10001/rest/storage/thumbnail/"+res.id+'?w=400&h=400'
       },
       addFiles (e) {
         let res=JSON.parse(e.response)
@@ -189,6 +203,9 @@
 
 </script>
 
-<style>
-
+<style scoped>
+   .card-bg img{
+     width: 545px;
+     height: 545px;
+   }
 </style>

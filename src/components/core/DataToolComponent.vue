@@ -1,6 +1,7 @@
 <template>
-  <q-toolbar class="q-opcity">
+  <q-toolbar class="q-opcity col">
     <q-btn
+      v-show="btnStatus"
       color="primary"
       size="sm"
       round dense
@@ -28,8 +29,16 @@
            size="sm"
            outline
            round dense
+           color="primary"
            icon="add"
            @click="$emit('addHosueType')"/>
+    <q-btn v-show="editType"
+           class="q-ml-md"
+           size="sm"
+           flat round
+           color="primary"
+           icon="replay"
+           @click="$emit('resetType')"/>
   </q-toolbar>
 </template>
 
@@ -42,6 +51,12 @@
         type: Array,
         default () {
           return []
+        }
+      },
+      btnStatus:{
+        type: Boolean,
+        default(){
+          return false
         }
       }
     },

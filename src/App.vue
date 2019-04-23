@@ -1,7 +1,7 @@
 <template>
   <div id="q-app">
     <router-view />
-    <q-ajax-bar color="deep-orange" v-if="!$q.platform.is.mobile"/>
+    <q-ajax-bar color="purple" v-if="!$q.platform.is.mobile"/>
   </div>
 </template>
 

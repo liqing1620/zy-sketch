@@ -1,11 +1,16 @@
 <template>
   <q-page class="flex flex-center index-page">
-    <data-form ></data-form>
+    <data-form></data-form>
   </q-page>
 </template>
 <script>
   export default {
-    name: 'PageIndex'
+    name: 'shopPage',
+    data(){
+      return{
+
+      }
+    }
   }
 </script>
 <style scoped>

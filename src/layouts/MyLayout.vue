@@ -27,7 +27,7 @@
     <!--    >-->
     <!--    </q-layout-drawer>-->
 
-    <q-page-container class="q-mt--10r">
+    <q-page-container class="q-mt--10r" style="width: 100%">
       <router-view/>
       <div class="text-sm text-center">
         <span class="text-grey"> 版权所有&copy;2017
@@ -66,4 +66,10 @@
     z-index: 2500;
   }
 
+  .text-sm {
+    position: absolute;
+    bottom: -70px;
+    margin: 10px auto;
+    width: 100%;
+  }
 </style>
