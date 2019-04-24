@@ -181,9 +181,9 @@
           console.log(res)
           that.saveStatus = false
           that.opened = false
-          that.$refs.imgs.reset()
-          that.$files.imgs.reset()
           that.$emit('save-model')
+          that.$refs.imgs.reset()
+          that.$refs.files.reset()
         }).catch(function (err) {
           console.error(err)
         })

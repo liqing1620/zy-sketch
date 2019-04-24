@@ -206,15 +206,8 @@
       //上传窗口打开
       openModal () {
         this.$refs.files.opened = true
-        this.$refs.files.model = {
-          picId: '',
-          fileId: '',
-          picName: '',
-          path: '',
-          price: '',
-          fileFormat: '',
-          picExplain: ''
-        }
+        this.$refs.files.payStatus = false
+        this.$refs.files.model = {}
         this.modelStatus = 'edit'
       },
       //预览
