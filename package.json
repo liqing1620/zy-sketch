@@ -14,7 +14,8 @@
     "build": "quasar build -t mat"
   },
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "vuelidate": "^0.7.4"
   },
   "devDependencies": {
     "@vue/eslint-config-standard": "^4.0.0",
@@ -37,5 +38,6 @@
   ],
   "resolutions": {
     "ajv": "6.8.1"
-  }
+  },
+  "__npminstall_done": false
 }

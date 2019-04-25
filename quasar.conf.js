@@ -5,7 +5,8 @@ module.exports = function (ctx) {
     // app plugins (/src/plugins)
     plugins: [
       'axios',
-      'inject'
+      'inject',
+      'vuelidate'
     ],
     css: [
       'app.styl'
@@ -96,6 +97,7 @@ module.exports = function (ctx) {
       ],
       // Quasar plugins
       plugins: [
+        'Cookies',
         'Loading',
         'Notify',
         'Dialog',

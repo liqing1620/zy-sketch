@@ -11,7 +11,10 @@ const routes = [
       { path: 'shop',
         component: () => import('pages/admin/shopPage.vue') }
     ]
-  }
+  },
+  {
+   path: '/login',
+    component: () => import('pages/Login.vue') }
 ]
 
 // Always leave this as last one
